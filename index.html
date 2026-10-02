@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Website Keluarga - Mbah Samirun</title>
+
+<!-- KONEKSI ASLI - JANGAN DIHAPUS - TETAP DIPERTAHANKAN -->
+<link rel="stylesheet" href="header_text.css"/>
+<link rel="stylesheet" href="blink_header.css"/>
+<link rel="stylesheet" href="section_text.css"/>
+<link rel="stylesheet" href="section_image_figure.css"/>
+<link rel="stylesheet" href="gradient_section.css"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Lora:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper: #fdfcf7;
+  --ink: #1f2937;
+  --muted: #6b7280;
+  --accent: #1e40af;
+  --accent-soft: #dbeafe;
+  --border: #e5e7eb;
+}
+*{box-sizing:border-box}
+html{overflow-x:hidden}
+body{
+  margin:0;
+  font-family:"Plus Jakarta Sans", system-ui, sans-serif;
+  color:var(--ink);
+  background: #f3f4f6;
+  line-height:1.7;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  z-index:-1;
+}
+
+/* WRAPPER RESPONSIVE - kunci PC & HP */
+.wrapper {
+  width: min(920px, calc(100% - 32px));
+  margin: 32px auto;
+  padding: 10px;
+  background: #00ff00;
+  border: 1px solid var(--border) !important;
+  border-radius: 33px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08), 0 2px 12px rgba(0,0,0,0.05);
+  height: auto !important;
+  min-height: 80vh;
+  box-sizing: border-box; /* tambahkan ini biar padding tidak menambah lebar */
+}
+
+/* HEADER RESPONSIVE */
+header { 
+  height:auto !important;
+  min-height: 180px;
+  padding: 40px 32px 24px !important;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  margin-bottom:10px; 
+  border-radius: 25px;
+}
+
+header .top-label{
+  font-size: clamp(12px, 2.5vw, 16px);
+  letter-spacing:0.2em; 
+  font-weight:900;
+  color: #374151; 
+  text-transform:uppercase;
+  margin: 0 0 10px 0 !important; /* hapus margin-left fixed */
+  width:100%;
+  text-align:center;
+  
+}
+header h1{
+  margin:0;
+  font-family:"Lora", serif;
+  font-size: clamp(26px, 7vw, 42px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  text-align:center;
+  width:100%;
+  word-wrap: break-word;
+}
+header::after{
+  content:"Silsilah & Kenangan Keluarga Besar";
+  font-size: clamp(13px, 3vw, 16px); 
+  color: var(--muted); 
+  margin: 8px 0 0 0 !important; /* hapus margin-left 325px */
+  font-weight:900;
+  display:block;
+  text-align:center;
+  width:100%;
+}
+
+/* COURSE CONTENT RESPONSIVE */
+.course{
+  height:auto !important;
+  border:none !important;
+  padding: 32px clamp(20px, 5vw, 36px) 48px;
+  border-radius: 25px;
+}
+
+.course h2{
+  color:#374151;
+  position:relative; /* pastikan ini tetap ada */
+  padding-bottom:16px;
+  text-align:center;
+}
+
+.course h2::after{
+  content:"";
+  position:absolute; 
+  left: 50%; 
+  bottom:0;
+  transform: translateX(-50%); /* INI KUNCINYA BIAR CENTER */
+  width:100px; 
+  height:4px;
+  background: #ffffff;
+  border-radius:99px;
+}
+
+.course h3{
+  font-weight:400;
+  font-size: clamp(15px, 3.8vw, 17px);
+  line-height:1.85;
+  color:#374151;
+  margin: 18px 0;
+  text-align:justify;
+}
+
+.course h4{
+  font-size: clamp(12px, 3vw, 15px);
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#ffffff;
+  font-weight:900;
+  margin: 10px 0 28px;
+  text-align:center;
+  padding: 0 12px;
+  line-height:1.4;
+}
+
+/* FIGURE RESPONSIVE - class lama tetap dipakai */
+figure.fig1, figure.fig2, figure.fig3{
+  margin: 28px auto;
+  width: 100%;
+  max-width: 590px;
+  background:#00ffff;
+  padding:0px;
+  border-radius:18px;
+  border:0px solid var(--border);
+  transition: transform .3s ease;
+  overflow:hidden;
+}
+figure.fig1:hover, figure.fig2:hover, figure.fig3:hover{
+  transform: translateY(-3px);
+}
+img.foto{
+  display:block;
+  width:100%;
+  height:auto !important; /* fix dari 100% jadi auto */
+  max-width:100%;
+  border-radius:12px;
+  object-fit:cover;
+  aspect-ratio: auto;
+}
+
+/* Badge tahun RESPONSIVE */
+.timeline{
+  display:flex; 
+  gap:10px; 
+  flex-wrap:wrap;
+  margin: 24px 0 8px;
+  justify-content: center; /* INI KUNCINYA */
+  align-items: center;
+  width: 100%;
+}
+.timeline span{
+  background:#00ff00;
+  color:#374151;
+  padding:6px 14px;
+  border-radius:1000px;
+  font-size: clamp(11px, 2.8vw, 14px); 
+  font-weight:900;
+  margin-left:0 !important; /* hapus margin-left 34px */
+  white-space: nowrap;
+}
+
+.divider{
+  height: 2px; 
+  background: #ffffff;
+  margin: 32px 0;
+}
+
+#img_article {
+border-radius: 25px;
+width:90px;
+margin-left:10px;
+}
+
+footer.silsilah-footer{
+  text-align:center;
+  padding: 24px clamp(16px, 4vw, 20px);
+  font-size: clamp(13px, 3vw, 16px);
+  color:#ffffff;
+  background:#008000;
+  border-top:0px solid var(--border);
+  font-weight:900;
+  line-height:1.6;
+  margin-top:10px; 
+  border-radius: 25px;
+}
+footer.silsilah-footer p{
+  margin:0;
+}
+
+#footerbackground-blink{
+animation: blink-animation 1s steps(5, start) infinite;
+-webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+to {
+visibility: hidden;
+}
+}
+@-webkit-keyframes blink-animation {
+to {
+visibility: hidden;
+}
+}
+
+/* === MEDIA QUERIES HP === */
+@media(max-width: 768px){
+  .wrapper{
+    width: calc(100% - 24px);
+    margin: 16px auto;
+    border-radius: 18px;
+  }
+  header{
+    padding: 28px 20px 18px !important;
+    min-height:auto;
+  }
+}
+
+@media(max-width:600px){
+  .wrapper{margin:0; width:100%; border-radius:0; border:none !important; border-left:none !important; border-right:none !important}
+  header, .course{padding-left:20px !important; padding-right:20px !important}
+  .course{padding-top:24px; padding-bottom:32px}
+  .course h3{text-align:left; hyphens:auto}
+  .timeline{justify-content:center}
+  .course h2{text-align:center}
+  .course h2::after{left:50%; transform:translateX(-50%)}
+  figure.fig1, figure.fig2, figure.fig3{margin:20px auto; border-radius:12px}
+  img.foto{border-radius:10px}
+}
+
+@media(max-width: 400px){
+  .wrapper{width:100%}
+  .timeline span{font-size:11px; padding:5px 10px}
+  .course h3{font-size:15px; line-height:1.7}
+}
+
+/* PC LEBAR - biar tidak terlalu kecil di layar besar */
+@media(min-width: 1000px){
+  .wrapper{
+    width: 899px;
+    margin: 40px auto;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<div class="wrapper">
+  <header>
+ 
+    <center><div class="top-label">Arsip Keluarga • Kebumen</div></center>
+    <h1 class="blink">WEBSITE KELUARGA</h1>
+         <script src="strobe_header.js"></script>
+  </header>
+
+  <section class="course">
+    <div class="timeline">
+      <span>1917 • Lahir di Grenggeng</span>
+      <span>1992 • Wafat di Gunung Mujil</span>
+      <span>Pensiunan Depag Kebumen</span>
+    </div>
+
+    <h2>Mbah Samirun</h2>
+    
+    <h3>
+      Beberapa anggota keluarga, terutama generasi ketiga keluarga besar mbah Samirun barangkali banyak yang tidak tahu mengenai simbah mereka. 
+      Oleh karena itu pada artikel ini saya akan menyampaikan beberapa hal yang mudah-mudahan bisa menambah pemahaman mereka mengenai mbah Samirun.
+    </h3> 
+
+    <figure class="fig1">
+      <img class="foto" src="gambar1.png" alt="Mbah Samirun ketika masih remaja"/>
+    </figure>
+    <h4>Mbah Samirun ketika masih remaja</h4>
+
+    <h3>
+      Mbah Samirun lahir di Grenggeng Kemit pada tahun 1917 dan menghabiskan masa kecilnya di sana. Ketika menginjak usia remaja mbah Samirun aktif di 
+      organisasi Islam Masyumi. Selain giat di organisasi mbah Samirun juga sempat nyantri di pondok pesantren Salafiyah Wonoyoso yang ketika itu diasuh
+      oleh mbah Kyai Nasokha.
+    </h3>
+
+    <figure class="fig2">
+      <img class="foto" src="gambar2.png" alt="Mbah Samirun dan empat sahabatnya"/>
+    </figure>
+    <h4>Mbah Samirun dan empat sahabatnya</h4> 
+
+    <h3>
+      Seperti tersebut di dalam salah satu novel yang ditulis oleh Syaifudin Zuhri (Mentri Agama di era Presiden Sukarno) mbah Samirun 
+      dan sahabatnya mbah Basiran adalah dua orang santri yang sempat bertemu dengan beliau. Kemudian pada masa kejayaan Nahdhotul Ulama, mbah Samirun 
+      aktif di organisasi ini dan sempat menjadi wakil rakyat (anggota DPRD) di daerah Kabupaten Kebumen selama dua periode.
+    </h3> 
+
+    <figure class="fig3">
+      <img class="foto" src="gambar3.png" alt="Mbah Samirun dan empat sahabatnya"/>
+    </figure>
+    <h4>Mbah Samirun dan beberapa sejawatnya</h4>
+        
+    <div class="divider"></div>
+ 
+    <h3>
+      Mbah Samirun meninggal pada tahun 1992 di Dukuh Gunung Mujil / Kelurahan Bumirejo / Kabupaten Kebumen, dengan status sebagai pensiunan pegawai 
+      Kantor Departemen Agama Kabupaten Kebumen. Sementara mbah Samirun putri yaitu mbah Siti Murlingah meninggal pada tahun 2007 di Dukuh Wonoyoso /
+      Kelurahan Bumirejo / Kabupaten Kebumen. Tepatnya di rumah petilasan yaitu di Gg. Walikonang 3 No 9 / RT 03 RW 05.
+    </h3>
+    <h3>
+      Mbah Samirun dimakamkan di makbaroh Dukuh Gunung Mujil, sedangkan mbah Siti Murlingah di makamkan di makbaroh Dukuh Wonoyoso. Kebetulan kedua 
+      Pedukuhan ini terletak berseberangan jadi jarak antara keduanya tidak begitu jauh. Demikian beberapa hal yang bisa saya sampaikan mengenai
+      mbah Samirun almarhum dan mbah Siti Murlingah almarhumah, mudah-mudahan bermanfaat.
+    </h3>
+	
+	<h3>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Penulis:
+	</h3>
+    <img id="img_article" src="profile_image/i'm.jpg" width=""/>
+    <h3>
+	&nbsp;&nbsp;
+	Abdul Latif</h3>
+	
+  </section>
+
+  <footer class="silsilah-footer" id="footerbackground-blink">
+    <p>Ditulis dengan hormat untuk keluarga besar Mbah Samirun<br>
+        Grenggeng - Wonoyoso - Gunung Mujil</p>
+  </footer>
+</div>
+</body>
+</html>
