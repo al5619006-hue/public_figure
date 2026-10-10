@@ -1,0 +1,11 @@
+h1 {
+color:#ffffff;
+font-family:"Lora", serif;
+font-size: 85px;
+font-weight: 900;
+text-align: center;
+margin-top: 40px;
+text-shadow: 1px 1px #374151,2px 2px #374151,3px 3px #374151, 
+             4px 4px #374151,5px 5px #374151,6px 6px #374151,    
+             7px 7px #374151,8px 8px #374151,9px 9px #374151;  
+}
